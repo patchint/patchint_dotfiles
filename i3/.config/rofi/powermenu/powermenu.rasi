@@ -1,0 +1,105 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ * Reworked by Lena aka Plunne
+ * Gitlab : @Plunne
+ *
+ */
+
+configuration {
+	font:							"CodeNewRoman Nerd Font 14";
+    show-icons:                     false;
+	icon-theme: 					"Papirus";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     true;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+* {
+    background:                     #000000d8;
+    background-alt:                 #0000004d;
+    background-text:                #00000000;
+    foreground:                     #ffffffff;
+    accent:               			#d70087ff;
+    color-null:                     #00000000;
+}
+
+window {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  0px;
+}
+
+prompt {
+    enabled: 						true;
+    padding:                        1% 1% 1% 0%;
+	background-color: 				@color-null;
+	text-color: 					@foreground;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"System |";
+	background-color: 				@color-null;
+	text-color: 					@foreground;
+    padding:                        1% 0.5% 1% 1%;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    background-color:               @background-text;
+    text-color:                     @foreground;
+    expand:                         false;
+    border:                  		0% 0% 0% 0%;
+    border-radius:                  0% 100% 100% 0%;
+    border-color:                  	@border;
+    margin:                         0% 49.3% 0% 0%;
+    padding:                        0%;
+    position:                       center;
+}
+
+listview {
+    background-color:               @color-null;
+    margin:                         0% 0% 0% 0%;
+    spacing:                        4%;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @color-null;
+    children:                       [ inputbar, listview ];
+    spacing:                        5%;
+    padding:                        32.50% 0% 0% 22.5%;
+}
+
+element {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    orientation:                    horizontal;
+    border-radius:                  100%;
+}
+
+element-text {
+	font:							"feather 84";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         4% 2.4% 13% 2.4%;
+}
+
+element selected {
+    background-color:               @background-alt;
+    text-color:                     @accent;
+    border:                  		0.2% 0.2% 0.2% 0.2%;
+    border-radius:                  100%;
+    border-color:                  	@accent;
+}
